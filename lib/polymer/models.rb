@@ -10,6 +10,16 @@ class Polyrhythm
     end
   end
   
+  def title
+    title = ""
+    patterns.each_with_index do |p, count|
+      title << '/' unless count == 0
+      title << p.time.to_s
+    end
+    title << " polyrhythm"
+    title
+  end
+  
   def resolve
     point = 1
     until self.patterns.all?{|pattern| point % pattern.time == 0} do
