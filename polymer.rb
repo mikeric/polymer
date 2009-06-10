@@ -2,8 +2,36 @@ $: << File.dirname(__FILE__) + '/lib'
 
 require 'rubygems'
 require 'sinatra'
-require 'polymer'
+require 'haml'
+require File.dirname(__FILE__) + '/lib/polymer'
 
 get '/' do
-  "Polymer!"
+  haml :index
+end
+
+get '/stylesheet' do
+  content_type 'text/css', :charset => 'utf-8'
+  sass :master
+end
+
+get '/new' do
+  haml :new
+end
+
+post '/new' do
+  @polyrhythm = Polyrhythm.new(params[:polyrhythm])
+  if @polyrhythm.save
+    redirect '/'
+  else
+    redirect '/new'
+  end
+end
+
+get '/:id' do |id|
+  @polyrhythm = Polyrhythm.get(id)
+  if @polyrhythm
+    haml :show
+  else
+    redirect '/'
+  end
 end

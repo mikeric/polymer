@@ -1,0 +1,9 @@
+%h1 new
+%p create 2 patterns
+
+%form{:method => "post", :action => "/new"}
+  - 2.times do
+    %p
+      %input{:type=>"text", :name=>"polyrhythm[pattern_attributes][][time]"}
+      %input{:type=>"text", :name=>"polyrhythm[pattern_attributes][][pattern]"}
+  %input{:type=>"submit", :value=>"Submit"}

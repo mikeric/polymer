@@ -1,0 +1,5 @@
+%h1= "Polyrhythm #{@polyrhythm.id}"
+
+- @polyrhythm.patterns.each do |p|
+  %span
+    = p.pattern * (@polyrhythm.resolve/p.time)

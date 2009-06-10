@@ -4,6 +4,12 @@ class Polyrhythm
   property :id, Serial
   has n, :patterns
   
+  def pattern_attributes=(pattern_attributes)
+    pattern_attributes.each do |attributes|
+      patterns.build(attributes)
+    end
+  end
+  
   def resolve
     point = 1
     until self.patterns.all?{|pattern| point % pattern.time == 0} do
