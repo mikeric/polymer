@@ -1,3 +1,29 @@
-span
-  :display block
-  :font-family 'monaco'
+=wrap
+  :margin 0 auto
+  :width 800px
+
+body
+  :margin 0
+  :padding 0
+  :font-family 'helvetica', 'arial', 'sans'
+  :font-size 75%
+  :color #555
+
+#header
+  :background-color #eee
+  :border 1px solid #eee
+  :margin-bottom 3em
+  .wrapper
+    +wrap
+    :margin 3em auto
+    h1, h4
+      :margin 0
+    .tag
+      :float right
+      :margin-top 1em
+
+#content
+  +wrap
+  span
+    :display block
+    :font-family 'monaco'
