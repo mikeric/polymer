@@ -1,26 +1,58 @@
+!main = #0da
+
 =wrap
   :margin 0 auto
-  :width 800px
+  :width 700px
 
 body
   :margin 0
   :padding 0
   :font-family 'helvetica', 'arial', 'sans'
   :font-size 75%
-  :color #555
+  :color #777
+
+a
+  :color #5ac
+  :text-decoration none
+  &:hover
+    :color #07A
+    :text-decoration underline
+
+input[type=text]
+  :font-family 'monaco'
+  :color #777
+  :border 3px solid #eee
+
+input[type=submit]
+  :margin 0
+  :margin-top .2em
+  :font-family 'helvetica', 'arial', 'sans'
+  :font-size 1.3em
+  :color #fff
+  :background-color #ccc
+  :border 3px solid #ccc
+
+input.time
+  :width 2.3em
+
+input.pattern
+  :width 30em
 
 #header
-  :background-color #eee
-  :border 1px solid #eee
+  :background-color #f7f7f7
+  :border 1px solid #f7f7f7
   :margin-bottom 3em
   .wrapper
     +wrap
-    :margin 3em auto
+    :margin 5em auto
     h1, h4
-      :margin 0
+      :margin -.2em 0
+      :color = !main
     .tag
       :float right
       :margin-top 1em
+      .name
+        :color = !main
 
 #content
   +wrap
