@@ -3,5 +3,5 @@ $: << File.dirname(__FILE__) + '/polymer'
 require 'datamapper'
 require 'models'
 
-DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/polymer.db")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/polymer.db")
 DataMapper.auto_upgrade!
