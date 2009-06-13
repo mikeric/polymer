@@ -19,25 +19,23 @@ a
     :color = !link - #333
     :text-decoration underline
 
-input[type=text]
-  :font-family 'monaco'
-  :color #777
-  :border 3px solid #eee
-
-input[type=submit]
-  :margin 0
-  :margin-top .2em
-  :font-family 'helvetica', 'arial', 'sans'
-  :font-size 1em
-  :color = !link
-  :background-color #eee
-  :border 3px solid #eee
-
-input.time
-  :width 3em
-
-input.pattern
-  :width 30em
+input
+  :margin .3em 0
+  &[type=text]
+    :font-family 'monaco'
+    :color #777
+    :border 3px solid #eee
+  &[type=submit]
+    :padding .5em
+    :font-family 'helvetica', 'arial', 'sans'
+    :font-size 1em
+    :color = !link
+    :background-color #eee
+    :border 3px solid #eee
+  &.time
+    :width 3em
+  &.pattern
+    :width 30em
 
 #header
   :margin-bottom 3em
@@ -47,7 +45,7 @@ input.pattern
   .wrapper
     +wrap
     h1, h4
-      :margin -.2em 0
+      :margin 0
       :color #fff
     .tag
       :float right
