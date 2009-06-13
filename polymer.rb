@@ -35,3 +35,9 @@ get '/:id' do |id|
     redirect '/'
   end
 end
+
+helpers do
+  def mark_pattern(pattern)
+    pattern.pattern.gsub(/(^.)/, '<span class="mark">\1</span>')
+  end
+end

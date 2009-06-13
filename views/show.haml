@@ -3,4 +3,4 @@
 
 - @polyrhythm.patterns.each do |p|
   %span
-    = p.pattern * (@polyrhythm.resolve/p.time)
+    = mark_pattern(p) * (@polyrhythm.resolve/p.time)
