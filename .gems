@@ -1,0 +1,2 @@
+rack --version 1.0
+sinatra --version 0.9.2
