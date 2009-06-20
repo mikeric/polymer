@@ -35,7 +35,7 @@ class Pattern
   property :id,             Serial
   property :polyrhythm_id,  Integer, :key => true
   property :time,           Integer
-  property :pattern,        String
+  property :body,           String
   
   belongs_to :polyrhythm
 end

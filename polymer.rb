@@ -30,6 +30,7 @@ end
 get '/:id' do |id|
   @polyrhythm = Polyrhythm.get(id)
   if @polyrhythm
+    @patterns = @polyrhythm.patterns
     haml :show
   else
     redirect '/'
@@ -38,6 +39,6 @@ end
 
 helpers do
   def mark_pattern(pattern)
-    pattern.pattern.gsub(/(^.)/, '<span class="mark">\1</span>')
+    pattern.body.gsub(/(^.)/, '<span class="mark">\1</span>')
   end
 end
