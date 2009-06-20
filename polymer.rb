@@ -3,6 +3,7 @@ $: << File.dirname(__FILE__) + '/lib'
 require 'rubygems'
 require 'sinatra'
 require 'haml'
+require 'sass'
 require File.dirname(__FILE__) + '/lib/polymer'
 
 get '/' do

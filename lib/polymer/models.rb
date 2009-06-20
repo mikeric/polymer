@@ -4,12 +4,6 @@ class Polyrhythm
   property :id, Serial
   has n, :patterns
   
-  def pattern_attributes=(pattern_attributes)
-    pattern_attributes.each do |attributes|
-      patterns.build(attributes)
-    end
-  end
-  
   def title
     title = ""
     patterns.each_with_index do |p, count|
