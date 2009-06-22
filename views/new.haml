@@ -1,8 +1,9 @@
 %h1 New polyrhythm
 
-%form{:method => "post", :action => "/new"}
+%form{:method => 'post', :action => '/new'}
   - 2.times do
     %span
-      %input.time{:type=>"text", :name=>"polyrhythm[patterns][][time]"}
-      %input.pattern{:type=>"text", :name=>"polyrhythm[patterns][][body]"}
-  %input{:type=>"submit", :value=>"Create"}
+      %input.time{:type => 'text', :name => 'polyrhythm[patterns][][time]'}
+      %input.pattern{:type => 'text', :name => 'polyrhythm[patterns][][body]'}
+  %input{:type => 'button', :value => '+'}
+  %input{:type => 'submit', :value => 'Create Polyrhythm'}
