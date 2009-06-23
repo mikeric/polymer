@@ -21,7 +21,7 @@ end
 
 post '/new' do
   @polyrhythm = Polyrhythm.new(params[:polyrhythm])
-  if @polyrhythm.save
+  if @polyrhythm.make
     redirect "/#{@polyrhythm.id}"
   else
     redirect '/new'

@@ -4,6 +4,18 @@ class Polyrhythm
   property :id, Serial
   has n, :patterns
   
+  def make
+    transaction do |trans|
+      trans.rollback unless save
+      patterns.each do |pattern|
+        unless pattern.save
+          trans.rollback
+          break
+        end
+      end
+    end
+  end
+  
   def title
     title = ""
     patterns.each_with_index do |p, count|
@@ -27,9 +39,9 @@ class Pattern
   include DataMapper::Resource
   
   property :id,             Serial
-  property :polyrhythm_id,  Integer, :key => true
-  property :time,           Integer
-  property :body,           String
+  property :polyrhythm_id,  Integer,  :key => true
+  property :time,           Integer,  :nullable => false
+  property :body,           String,   :nullable => false
   
   belongs_to :polyrhythm
 end
