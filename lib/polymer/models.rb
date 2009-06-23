@@ -44,4 +44,10 @@ class Pattern
   property :body,           String,   :nullable => false
   
   belongs_to :polyrhythm
+  
+  validates_with_block do
+    if body && time != nil
+      body.length == time * 2
+    end
+  end
 end
