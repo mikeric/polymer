@@ -7,16 +7,12 @@ require 'sass'
 require File.dirname(__FILE__) + '/lib/polymer'
 
 get '/' do
-  haml :index
+  haml :new
 end
 
 get '/stylesheet' do
   content_type 'text/css', :charset => 'utf-8'
   sass :master
-end
-
-get '/new' do
-  haml :new
 end
 
 post '/new' do
