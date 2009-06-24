@@ -30,7 +30,7 @@ input
     :padding .5em
     :display block
     :font-family 'helvetica', 'arial', 'sans'
-    :font-size 1.5em
+    :font-size 1.2em
     :font-weight bold
     :color #333
     :background-color #eee
@@ -54,7 +54,6 @@ form
         :border-color #9da
 
 #header
-  :margin-bottom 3em
   :padding 5em 0
   :background-color = !main
   :color = !main - #333
@@ -71,6 +70,20 @@ form
 
 #content
   +wrap
+  h1
+    :margin 1em 0 0
+    :clear right
+  .tag
+    :float right
+    :padding 0 1em .5em
+    :background-color #eee
+  #usage
+    :margin-bottom 2em
+    :border-bottom 1px solid #ddd
+    :font-family 'georgia'
+    :font-size 1.2em
+    :font-style italic
+    :color #999
   span
     :display block
     :font-family 'monaco'

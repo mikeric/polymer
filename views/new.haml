@@ -1,9 +1,12 @@
 %h1 New polyrhythm
 
+#usage
+  %p Fill in the first box with the number of beats, and the second with the pattern. Make sure you have 2 characters for each beat, and the field will turn green once valid. <a href="#example">Click here</a> to see an example.
+
 %form{:method => 'post', :action => '/new'}
   - 2.times do
-    %span
+    %span.pattern
       %input.time{:type => 'text', :name => 'polyrhythm[patterns][][time]'}
       %input.body{:type => 'text', :name => 'polyrhythm[patterns][][body]'}
   %input{:type => 'button', :value => '+'}
-  %input{:type => 'submit', :value => 'Create Polyrhythm'}
+  %input{:type => 'submit', :value => 'Create'}

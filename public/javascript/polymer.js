@@ -1,9 +1,19 @@
 $(document).ready(function(){
+  $("#usage a").click(function(){
+    $(".pattern:first > input:first").val('4');
+    $(".pattern:first > input:last").val('o-oo-oo-');
+    $(".pattern:eq(1) > input:first").val('5');
+    $(".pattern:eq(1) > input:last").val('o--oo--o-o');
+    $(".pattern:first").addClass('valid');
+    $(".pattern:eq(1)").addClass('valid');
+    return false;
+  });
+  
   $("input[value=+]").click(function(){
-    $("span:last").clone().insertAfter("span:last").hide();
-    $("span:last > input").val('');
-    $("span:last").removeClass('valid');
-    $("span:last").show('slow');
+    $(".pattern:last").clone().insertAfter(".pattern:last").hide();
+    $(".pattern:last > input").val('');
+    $(".pattern:last").removeClass('valid');
+    $(".pattern:last").show('slow');
   });
   
   $("input[type=text]").live('keyup', function(){
