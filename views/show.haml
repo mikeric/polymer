@@ -1,6 +1,7 @@
 %h1= @polyrhythm.title
 %p= "Resolves at #{@polyrhythm.resolve/@patterns[0].time} bars of #{@patterns[0].time}/4"
 
-- @patterns.each do |p|
-  %span
-    = mark_pattern(p) * (@polyrhythm.resolve/p.time)
+- @polyrhythm.measures.each do |measure|
+  .measure
+    - measure.each do |m|
+      %span= m
