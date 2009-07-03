@@ -38,7 +38,7 @@ class Polyrhythm
     bars = patterns.map{|p| p.body.split(//)}
     bars = bars.map{|b| b[0] = "<span class=\"mark\">#{b[0]}</span>"; b}
     bars = bars.map{|b| b * (resolve / (b.length/2))}
-    measures = bars.map{|b| b.each_slice(90 - (90 % (patterns[0].time * 2))).to_a}
+    measures = bars.map{|b| b.enum_for(:each_slice, 90 - (90 % (patterns[0].time * 2))).to_a}
     measures.transpose
   end
 end
