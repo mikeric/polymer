@@ -1,10 +1,10 @@
-$: << File.dirname(__FILE__) + '/lib'
+$: << File.dirname(__FILE__)
 
-require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'sass'
-require File.dirname(__FILE__) + '/lib/polymer'
+
+require 'lib/polymer'
 
 get '/' do
   haml :new
