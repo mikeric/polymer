@@ -13,6 +13,7 @@ $(document).ready(function(){
     $(".pattern:last").clone().insertAfter(".pattern:last").hide();
     $(".pattern:last > input").val('');
     $(".pattern:last").removeClass('valid');
+    $(".pattern:last").removeClass('invalid');
     $(".pattern:last").show('slow');
   });
   
@@ -21,12 +22,24 @@ $(document).ready(function(){
     var time = pattern.find("input.time");
     var body = pattern.find("input.body");
     
-    if (time.val() < 1){
+    if(time.val() < 1){
       pattern.removeClass('valid');
-    }else if (body.val().length == time.val() * 2){
+    }else if(body.val().length == time.val() * 2){
+      pattern.removeClass('invalid');
       pattern.addClass('valid');
     }else{
       pattern.removeClass('valid');
     }
+  });
+  
+  $("form").submit(function(){
+    var valid = true;
+    $('.pattern').each(function(){
+      if(!$(this).hasClass('valid')){
+        $(this).addClass('invalid');
+        valid = false;
+      }
+    });
+    return valid;
   });
 });
