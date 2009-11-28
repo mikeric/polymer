@@ -17,13 +17,7 @@ class Polyrhythm
   end
   
   def title
-    title = ""
-    patterns.each_with_index do |p, count|
-      title << '/' unless count == 0
-      title << p.time.to_s
-    end
-    title << " polyrhythm"
-    title
+    "#{patterns.map{|p| p.time_signature}.join(', ')} polyrhythm"
   end
   
   def resolve
