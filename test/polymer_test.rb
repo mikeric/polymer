@@ -7,8 +7,8 @@ class PolymerTest < Test::Unit::TestCase
     setup do
       @polyrhythm = Polyrhythm.new(
         :patterns => [
-          {:time => '4/4', :body => 'x-x-x-x-x-x-x-x-'},
-          {:time => '6/8', :body => 'o-o-o-o-o-o-'}
+          {:time => 4, :body => 'x-x-x-x-x-x-x-x-'},
+          {:time => 8, :body => 'o-o-o-o-o-o-'}
         ]
       )
     end
@@ -20,15 +20,19 @@ class PolymerTest < Test::Unit::TestCase
   
   context "A Pattern" do
     setup do
-      @pattern = Pattern.new(:time => '4/8', :body => 'o-o-o-o-')
+      @pattern = Pattern.new(:time => 8, :body => 'o-o-o-o-o-o-')
     end
     
     should "have a default resolution of 16" do
       assert_equal 16, @pattern.resolution
     end
     
-    should "have a length for the specified resolution" do
-      assert_equal @pattern.length, 8
+    should "have a time signature" do
+      assert_equal '6/8', @pattern.time_signature
+    end
+    
+    should "know how many beats are in the pattern" do
+      assert_equal @pattern.beats, 6
     end
   end
 end

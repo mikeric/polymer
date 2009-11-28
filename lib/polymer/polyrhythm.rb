@@ -28,7 +28,7 @@ class Polyrhythm
   
   def resolve
     point = 1
-    until self.patterns.all?{|pattern| point % pattern.length == 0} do
+    until self.patterns.all?{|pattern| point % pattern.body.length == 0} do
       point += 1
     end
     point
