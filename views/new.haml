@@ -5,8 +5,12 @@
 
 %form{:method => 'post', :action => '/new'}
   - 2.times do
-    %span.pattern
-      %input.time{:type => 'text', :name => 'polyrhythm[patterns][][time]'}
+    .pattern
+      %select.time{:name => 'polyrhythm[patterns][][time]'}
+        %option{:value => 4} 4
+        %option{:value => 8} 8
+        %option{:value => 16} 16
       %input.body{:type => 'text', :name => 'polyrhythm[patterns][][body]'}
+      %span.timesig
   %input{:type => 'button', :value => '+'}
   %input{:type => 'submit', :value => 'Create'}

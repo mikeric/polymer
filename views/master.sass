@@ -48,7 +48,7 @@ input
     :width 30em
 
 form
-  span
+  .pattern
     &.valid
       input[type=text]
         :border-color #9da
@@ -80,6 +80,10 @@ form
     :float right
     :padding 0 1em .5em
     :background-color #eee
+  .timesig
+    :margin-left .5em
+    :font-weight bold
+    :color #777
   #usage
     :margin-bottom 2em
     :border-bottom 1px solid #ddd
@@ -87,12 +91,12 @@ form
     :font-size 1.2em
     :font-style italic
     :color #999
-  span
-    :display block
-    :font-family monaco, consolas, monospace
-    :color #bbb
   .mark
     :display inline
     :color #000
   .measure
     :margin 2em 0
+    span
+      :display block
+      :font-family monaco, consolas, monospace
+      :color #bbb
