@@ -1,7 +1,9 @@
 %h1 New polyrhythm
 
 #usage
-  %p Fill in the first box with the number of beats, and the second with the pattern. Make sure you have 2 characters for each beat, and the field will turn green once valid. <a href="#example">Click here</a> to see an example.
+  %p Use the dropdown to select a timing (quarter notes, eighth notes, etc.) and fill in the field with the pattern. The default resolution is in sixteenths, that is, every character represents a sixteenth note.
+  
+  %p Once the pattern is divisible by it's selected timing, the field will turn green and the time signature will be displayed on the far right of the pattern. <a href="#example">Click here</a> to see an example.
 
 %form{:method => 'post', :action => '/new'}
   - 2.times do
