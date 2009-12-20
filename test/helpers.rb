@@ -1,7 +1,9 @@
-$: << File.dirname(__FILE__) + '/..'
+$: << File.dirname(__FILE__) + '/../lib'
 
-require 'rubygems'
 require 'test/unit'
 require 'shoulda'
+require 'polymer'
 
-require 'lib/polymer'
+class Test::Unit::TestCase
+  include Polymer
+end

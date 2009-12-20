@@ -1,4 +1,6 @@
 require 'rubygems'
-require 'polymer'
+require 'lib/polymer'
 
-run Sinatra::Application
+Polymer::App.set :environment, ENV["RACK_ENV"] || :production
+
+run Polymer::App
