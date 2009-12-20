@@ -17,7 +17,7 @@ class Polyrhythm
   end
   
   def title
-    "#{patterns.map{|p| p.time_signature}.join(', ')} polyrhythm"
+    "#{patterns.map{|p| p.time_signature}.uniq.join(', ')} polyrhythm"
   end
   
   def resolve

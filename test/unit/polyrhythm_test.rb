@@ -1,9 +1,9 @@
-$: << File.dirname(__FILE__)
+$: << File.dirname(__FILE__) + '/..'
 
 require "helpers"
 
-class PolymerTest < Test::Unit::TestCase
-  context "A Polyrhythm" do
+class PolyrhythmTest < Test::Unit::TestCase
+  context "polyrhythm" do
     setup do
       @polyrhythm = Polyrhythm.new(
         :patterns => [
@@ -13,7 +13,8 @@ class PolymerTest < Test::Unit::TestCase
       )
     end
     
-    should "have a title displaying all the time signatures" do
+    should "have a title displaying all unique time signatures" do
+      @polyrhythm.patterns.new :time => 8, :body => "x-o-o-x-o-o-"
       assert_equal "2/4, 6/8 polyrhythm", @polyrhythm.title
     end
     
@@ -26,24 +27,6 @@ class PolymerTest < Test::Unit::TestCase
             "|<span>x</span>-o-o-o-|o-o-<span>x</span>-o-|o-o-o-o-"]]
       
       assert_equal m, @polyrhythm.measures
-    end
-  end
-  
-  context "A Pattern" do
-    setup do
-      @pattern = Pattern.new(:time => 8, :body => "x-o-o-o-o-o-")
-    end
-    
-    should "have a default resolution of 16" do
-      assert_equal 16, @pattern.resolution
-    end
-    
-    should "have a time signature" do
-      assert_equal "6/8", @pattern.time_signature
-    end
-    
-    should "know how many beats are in the pattern" do
-      assert_equal 6, @pattern.beats
     end
   end
 end
