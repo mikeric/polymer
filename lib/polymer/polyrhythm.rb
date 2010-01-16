@@ -22,11 +22,7 @@ module Polymer
     end
     
     def resolve
-      point = 1
-      until self.patterns.all?{|pattern| point % pattern.body.length == 0} do
-        point += 1
-      end
-      point
+      patterns.map{|p| p.body.length}.inject {|a, b| a.lcm(b)}
     end
     
     def measures

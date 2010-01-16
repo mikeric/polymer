@@ -4,9 +4,9 @@ module Polymer
     
     property :id,             Serial
     property :polyrhythm_id,  Integer
-    property :time,           Integer,  :nullable => false
+    property :time,           Integer,  :required => true
     property :resolution,     Integer,  :default => 16
-    property :body,           String,   :nullable => false
+    property :body,           String,   :required => true
     
     belongs_to :polyrhythm
     
