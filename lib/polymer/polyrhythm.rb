@@ -1,21 +1,10 @@
 module Polymer
   class Polyrhythm
-    include DataMapper::Resource
+    include MongoMapper::Document
     
-    property :id, Serial
-    has n, :patterns
+    many :patterns, :class_name => "Polymer::Pattern"
     
-    def make
-      transaction do |trans|
-        trans.rollback unless save
-        patterns.each do |pattern|
-          unless pattern.save
-            trans.rollback
-            break
-          end
-        end
-      end
-    end
+    validates_associated :patterns
     
     def title
       "#{patterns.map{|p| p.time_signature}.uniq.join(', ')} polyrhythm"

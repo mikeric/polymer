@@ -14,7 +14,7 @@ class PolyrhythmTest < Test::Unit::TestCase
     end
     
     should "have a title displaying all unique time signatures" do
-      @polyrhythm.patterns.new :time => 8, :body => "x-o-o-x-o-o-"
+      @polyrhythm.patterns << Pattern.new(:time => 8, :body => "x-o-o-x-o-o-")
       assert_equal "2/4, 6/8 polyrhythm", @polyrhythm.title
     end
     

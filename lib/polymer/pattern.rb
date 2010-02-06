@@ -1,18 +1,12 @@
 module Polymer
   class Pattern
-    include DataMapper::Resource
+    include MongoMapper::EmbeddedDocument
     
-    property :id,             Serial
-    property :polyrhythm_id,  Integer
-    property :time,           Integer,  :required => true
-    property :resolution,     Integer,  :default => 16
-    property :body,           String,   :required => true
+    key :resolution,     Integer,  :required => true, :default => 16
+    key :time,           Integer,  :required => true
+    key :body,           String,   :required => true
     
-    belongs_to :polyrhythm
-    
-    validates_with_block do
-      body.length % beats == 0
-    end
+    validate :body_length
     
     def beats
       body.length / (resolution / time)
@@ -20,6 +14,14 @@ module Polymer
     
     def time_signature
       "#{beats}/#{time}"
+    end
+    
+    private
+    
+    def body_length
+      if body.length % (resolution / time) != 0
+        errors.add(:body, "must be devisible by the beat resolution")
+      end
     end
   end
 end

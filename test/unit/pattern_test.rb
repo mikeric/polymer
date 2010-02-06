@@ -12,6 +12,12 @@ class PatternTest < Test::Unit::TestCase
       assert_equal 16, @pattern.resolution
     end
     
+    should "be invalid unless divisble by it's beat resolution" do
+      assert @pattern.valid?
+      @pattern.body = "x-o-o"
+      assert !@pattern.valid?
+    end
+    
     should "have a time signature" do
       assert_equal "6/8", @pattern.time_signature
     end
