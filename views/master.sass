@@ -57,6 +57,7 @@ form
         :border-color #e57
 
 #header
+  :overflow hidden
   :padding 5em 0
   :background-color = !main
   :color = !main - #333
@@ -70,6 +71,20 @@ form
       :margin-top 1em
       .name
         :color #fff
+  #fork-ribbon
+    :position relative
+    span
+      :padding 1em 8em
+      :position absolute
+      :top -30px
+      :right -90px
+      :-webkit-transform rotate(45deg)
+      :-moz-transform rotate(45deg)
+      :-webkit-box-shadow #395 3px 3px 50px
+      :-moz-box-shadow #395 3px 3px 50px
+      :background #FFF
+      &:hover
+        :text-decoration none
 
 #content
   +wrap
