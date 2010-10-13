@@ -1,5 +1,5 @@
 module Polymer
-  class App < Sinatra::Default
+  class App < Sinatra::Application
     set :root, File.dirname(__FILE__) + "/../.."
     
     include Polymer

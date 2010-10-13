@@ -1,3 +1,3 @@
-mongo --version 0.18.2
-mongo_ext --version 0.18.2
-mongo_mapper --version 0.6.10
+mongo
+mongo_ext
+mongo_mapper
