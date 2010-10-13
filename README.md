@@ -1,6 +1,6 @@
 # polymer
 
-A [Sinatra](http://www.sinatrarb.com/) application for visualizing [polyrhythmic compositions](http://www.drummersdominion.com/dominion/lessons/polyrhythms-101) in ASCII musical measures. [Try it out](http://polymer.heroku.com).
+A [Sinatra](http://www.sinatrarb.com/) application for visualizing [polyrhythmic compositions](http://en.wikipedia.org/wiki/Polyrhythm) in ASCII musical measures. [Try it out](http://polymer.heroku.com).
 
 ## Abstract
 
