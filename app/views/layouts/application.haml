@@ -1,0 +1,15 @@
+!!!
+
+%html
+  %head
+    = stylesheet_link_tag :master
+    = javascript_include_tag :jquery14, :polymer
+  %body
+    #wrapper
+      #header
+        .tag
+          %span <strong class="name">Polymer</strong> is a <strong>Padrino</strong> app
+        %h1 Polymer
+        %h4 Polyrhythmic goodness
+      #content
+        = yield

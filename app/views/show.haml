@@ -1,0 +1,7 @@
+%h1= @composition.title
+%p= "Resolves at #{@composition.resolve/@patterns[0].body.length} bars of #{@patterns[0].time_signature}"
+
+- @composition.measures.each do |measure|
+  .measure
+    - measure.each do |m|
+      .bar= m

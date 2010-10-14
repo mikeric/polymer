@@ -1,0 +1,16 @@
+#usage
+  %p Use the dropdown to select a timing (quarter notes, eighth notes, etc.) and fill in the field with the pattern. The default resolution is in sixteenths, that is, every character represents a sixteenth note.
+  
+  %p Once the pattern is divisible by it's selected timing, the field will turn green and the time signature will be displayed on the far right of the pattern. <a href="#example">Click here</a> to see an example.
+
+%form{:method => 'post'}
+  - 2.times do
+    .pattern
+      %select.time{:name => 'composition[patterns][][time]'}
+        %option{:value => 4} 4
+        %option{:value => 8} 8
+        %option{:value => 16} 16
+      %input.body{:type => 'text', :name => 'composition[patterns][][body]'}
+      %span.timesig
+  %input{:type => 'button', :value => '+'}
+  %input{:type => 'submit', :value => 'Create'}
