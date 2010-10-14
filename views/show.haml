@@ -1,7 +1,0 @@
-%h1= @polyrhythm.title
-%p= "Resolves at #{@polyrhythm.resolve/@patterns[0].body.length} bars of #{@patterns[0].time_signature}"
-
-- @polyrhythm.measures.each do |measure|
-  .measure
-    - measure.each do |m|
-      .bar= m

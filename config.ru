@@ -1,3 +1,2 @@
-require 'init'
-
-run Polymer::App
+require ::File.dirname(__FILE__) + '/config/boot.rb'
+run Padrino.application
