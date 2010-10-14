@@ -2,9 +2,9 @@ module Polymer
   class Pattern
     include MongoMapper::EmbeddedDocument
     
-    key :resolution,     Integer,  :required => true, :default => 16
-    key :time,           Integer,  :required => true
-    key :body,           String,   :required => true
+    key :resolution,  Integer,  :required => true, :default => 16
+    key :time,        Integer,  :required => true
+    key :body,        String,   :required => true
     
     validate :body_length
     

@@ -1,9 +1,5 @@
-!main = #5b7
+!main = #e45
 !link = #5ac
-
-=wrap
-  :margin 0 auto
-  :width 700px
 
 body
   :margin 0
@@ -11,12 +7,13 @@ body
   :font-family helvetica, arial, sans-serif
   :font-size 12px
   :color #777
+  :background-color #e5e4e0
 
 a
   :color = !link
   :text-decoration none
   &:hover
-    :color = !link - #333
+    :color = !link - #555
     :text-decoration underline
 
 input
@@ -56,21 +53,27 @@ form
       input[type=text]
         :border-color #e57
 
+#wrapper
+  :margin 1em auto
+  :width 700px
+  :background-color white
+  :border-radius 10px
+
 #header
   :overflow hidden
-  :padding 5em 0
+  :padding 4em 2em
   :background-color = !main
-  :color = !main - #333
-  .wrapper
-    +wrap
-    h1, h4
-      :margin 0
+  :color = !main - #444
+  :border-top-left-radius 10px
+  :border-top-right-radius 10px
+  h1, h4
+    :margin 0
+    :color #fff
+  .tag
+    :float right
+    :margin-top 1em
+    .name
       :color #fff
-    .tag
-      :float right
-      :margin-top 1em
-      .name
-        :color #fff
   #fork-ribbon
     :position relative
     span
@@ -87,7 +90,7 @@ form
         :text-decoration none
 
 #content
-  +wrap
+  :padding 2em
   h1
     :margin 1em 0 0
     :clear right

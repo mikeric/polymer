@@ -1,7 +1,6 @@
 $: << File.dirname(__FILE__)
 
-require 'sinatra/base'
-require 'mongo'
+require 'sinatra'
 require 'mongo_mapper'
 require 'haml'
 require 'sass'
