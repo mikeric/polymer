@@ -1,13 +1,3 @@
-<<<<<<< HEAD
 .DS_Store
-Gemfile.lock
-=======
-<<<<<<< HEAD
-.DS_Store
-=======
-.DS_Store
-Gemfile.lock
 .sass-cache/*
 public/stylesheets/*.css
->>>>>>> Implemented front-end based on previous efforts.
->>>>>>> 964ee09... Merged old remote with master.
