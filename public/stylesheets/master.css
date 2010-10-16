@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 1em;
   padding: 0;
   font-family: helvetica, arial, sans-serif;
   font-size: 12px;
@@ -18,7 +18,7 @@ input {
   input[type=text] {
     font-family: monaco, consolas, monospace;
     color: #777777;
-    border: 3px solid #eeeeee; }
+    border: 3px solid #e7e7e7; }
   input[type=submit] {
     margin: 2em 0;
     padding: 0.5em;
@@ -27,15 +27,16 @@ input {
     font-size: 1.2em;
     font-weight: bold;
     color: #333333;
-    background-color: #eeeeee;
-    border: 3px solid #eeeeee; }
+    background-color: #e7e7e7;
+    border: 3px solid #e7e7e7;
+    border-radius: 5px; }
   input[type=button] {
     display: block;
     font-family: helvetica, arial, sans-serif;
     font-size: 1em;
     color: #55aacc;
     background-color: white;
-    border: 3px solid #eeeeee; }
+    border: 3px solid #e7e7e7; }
   input.time {
     width: 3em; }
   input.body {
@@ -46,43 +47,26 @@ form .pattern.valid input[type=text] {
 form .pattern.invalid input[type=text] {
   border-color: #ee5577; }
 
-#wrapper {
-  margin: 1em auto;
-  width: 700px;
-  background-color: white;
-  border-radius: 10px; }
-
 #header {
+  margin: 0 auto;
+  width: 700px;
   overflow: hidden;
   padding: 4em 2em;
-  background-color: #ee4455;
-  color: #bb1122;
+  background-color: #ffffcc;
+  color: #cccc99;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px; }
-  #header h1, #header h4 {
-    margin: 0;
-    color: white; }
-  #header .tag {
-    float: right;
-    margin-top: 1em; }
-    #header .tag .name {
-      color: white; }
-  #header #fork-ribbon {
-    position: relative; }
-    #header #fork-ribbon span {
-      padding: 1em 8em;
-      position: absolute;
-      top: -30px;
-      right: -90px;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -webkit-box-shadow: #339955 3px 3px 50px;
-      -moz-box-shadow: #339955 3px 3px 50px;
-      background: white; }
-      #header #fork-ribbon span:hover {
-        text-decoration: none; }
+  #header span {
+    float: right; }
+    #header span .name {
+      color: #aa9966; }
 
 #content {
+  margin: 0 auto;
+  width: 700px;
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   padding: 2em; }
   #content h1 {
     margin: 1em 0 0;
@@ -97,11 +81,12 @@ form .pattern.invalid input[type=text] {
     color: #777777; }
   #content #usage {
     margin-bottom: 2em;
+    padding-bottom: 1em;
     border-bottom: 1px solid #dddddd;
     font-family: georgia;
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-style: italic;
-    color: #999999; }
+    color: #777777; }
   #content .measure {
     margin: 2em 0; }
     #content .measure .bar {

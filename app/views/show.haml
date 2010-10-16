@@ -1,7 +1,7 @@
-%h1= @composition.title
-%p= "Resolves at #{@composition.resolve/@patterns[0].body.length} bars of #{@patterns[0].time_signature}"
+%h1= @composition.time_signatures.join(', ')
+%p= "Resolves at #{@composition.bars} bars of #{@patterns.first.time_signature}"
 
-- @composition.measures.each do |measure|
+- render_composition(@composition).each do |measure|
   .measure
-    - measure.each do |m|
-      .bar= m
+    - measure.each do |bar|
+      .bar= bar

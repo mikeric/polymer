@@ -1,8 +1,12 @@
-!main = #e45
+!main = #ffc
 !link = #5ac
 
+=wrap
+  :margin 0 auto
+  :width 700px
+
 body
-  :margin 0
+  :margin 1em
   :padding 0
   :font-family helvetica, arial, sans-serif
   :font-size 12px
@@ -21,7 +25,7 @@ input
   &[type=text]
     :font-family monaco, consolas, monospace
     :color #777
-    :border 3px solid #eee
+    :border 3px solid #e7e7e7
   &[type=submit]
     :margin 2em 0
     :padding .5em
@@ -30,15 +34,16 @@ input
     :font-size 1.2em
     :font-weight bold
     :color #333
-    :background-color #eee
-    :border 3px solid #eee
+    :background-color #e7e7e7
+    :border 3px solid #e7e7e7
+    :border-radius 5px
   &[type=button]
     :display block
     :font-family helvetica, arial, sans-serif
     :font-size 1em
     :color = !link
-    :background-color #fff
-    :border 3px solid #eee
+    :background-color white
+    :border 3px solid #e7e7e7
   &.time
     :width 3em
   &.body
@@ -53,43 +58,24 @@ form
       input[type=text]
         :border-color #e57
 
-#wrapper
-  :margin 1em auto
-  :width 700px
-  :background-color white
-  :border-radius 10px
-
 #header
+  +wrap
   :overflow hidden
   :padding 4em 2em
   :background-color = !main
   :color = !main - #333
   :border-top-left-radius 10px
   :border-top-right-radius 10px
-  h1, h4
-    :margin 0
-    :color #fff
-  .tag
+  span
     :float right
-    :margin-top 1em
     .name
-      :color #fff
-  #fork-ribbon
-    :position relative
-    span
-      :padding 1em 8em
-      :position absolute
-      :top -30px
-      :right -90px
-      :-webkit-transform rotate(45deg)
-      :-moz-transform rotate(45deg)
-      :-webkit-box-shadow #395 3px 3px 50px
-      :-moz-box-shadow #395 3px 3px 50px
-      :background #FFF
-      &:hover
-        :text-decoration none
+      :color !main - #566
 
 #content
+  +wrap
+  :background-color white
+  :border-bottom-left-radius 10px
+  :border-bottom-right-radius 10px
   :padding 2em
   h1
     :margin 1em 0 0
@@ -104,11 +90,12 @@ form
     :color #777
   #usage
     :margin-bottom 2em
+    :padding-bottom 1em
     :border-bottom 1px solid #ddd
     :font-family georgia
-    :font-size 1.2em
+    :font-size 1.4em
     :font-style italic
-    :color #999
+    :color #777
   .measure
     :margin 2em 0
     .bar
