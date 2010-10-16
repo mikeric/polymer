@@ -7,6 +7,9 @@ module SassInitializer
     require 'sass/plugin/rack'
     Sass::Plugin.options[:template_location] = Padrino.root("app/stylesheets")
     Sass::Plugin.options[:css_location] = Padrino.root("public/stylesheets")
+    if Padrino.env == :production
+       Sass::Plugin.options[:never_update] = true
+    end
     app.use Sass::Plugin::Rack
   end
 end
