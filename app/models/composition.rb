@@ -2,8 +2,15 @@ class Composition
   include MongoMapper::Document
   
   many :patterns
+  timestamps!
   
   validates_associated :patterns
+  
+  after_save {self.destroy_stale}
+  
+  def self.destroy_stale
+    all(:created_at.lt => 1.day.ago).each(&:destroy)
+  end
   
   def title
     "#{patterns.map{|p| p.time_signature}.uniq.join(', ')} polyrhythm"
